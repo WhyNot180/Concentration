@@ -1,4 +1,4 @@
-module Main exposing (cardRankToImageName, cardSuitToImageName, cartesianProduct, main)
+module Main exposing (cartesianProduct, main)
 
 import Browser
 import Html exposing (Html)
@@ -123,16 +123,16 @@ view : Model -> Html Msg
 view model =
     LayoutGrid.layoutGrid [ Typography.typography ]
         [ LayoutGrid.inner []
-            [ LayoutGrid.cell [ LayoutGrid.span1Phone, LayoutGrid.alignTop ] [ Html.h3 [ Typography.headline3 ] [ Html.text "Turns: " ] ]
-            , LayoutGrid.cell [ LayoutGrid.span2Phone, LayoutGrid.alignTop ] [ Html.h2 [ Typography.headline2 ] [ Html.text "00:00:00" ] ]
-            , LayoutGrid.cell [ LayoutGrid.span1Phone, LayoutGrid.alignTop ] [ Button.raised (Button.config |> Button.setOnClick GameStart) "Start" ]
+            [ LayoutGrid.cell [ LayoutGrid.span1Phone, LayoutGrid.alignBottom ] [ Html.h3 [ Typography.headline3 ] [ Html.text "Turns: " ] ]
+            , LayoutGrid.cell [ LayoutGrid.span2Phone, LayoutGrid.alignBottom ] [ Html.h2 [ Typography.headline2 ] [ Html.text "00:00:00" ] ]
+            , LayoutGrid.cell [ LayoutGrid.span1Phone, LayoutGrid.alignBottom ] [ Button.raised (Button.config |> Button.setOnClick GameStart) "Start" ]
             , LayoutGrid.cell [ LayoutGrid.span12Desktop, LayoutGrid.span4Phone ]
-                [ ImageList.imageList (ImageList.config |> ImageList.setMasonry True)
+                [ ImageList.imageList (ImageList.config |> ImageList.setAttributes [ style "columns" "14"] |> ImageList.setMasonry True)
                     (List.map
                         (\( x, y ) ->
                             ImageListItem.imageListItem
                                 (ImageListItem.config
-                                    |> ImageListItem.setAttributes [ style "width" "calc(100% / 5 - 4px)", style "margin" "2px", style "height" "auto" ]
+                                    |> ImageListItem.setAttributes [ style "width" "90%", style "margin" "2px", style "height" "auto" ]
                                 )
                             <|
                                 "../Images/Cards/"
