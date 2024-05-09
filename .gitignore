@@ -1,2 +1,35 @@
+# Elm
 Elm/elm-stuff
 Elm/main.js
+
+# Vue
+# Logs
+Vue/Concentration/logs
+Vue/Concentration/*.log
+Vue/Concentration/npm-debug.log*
+Vue/Concentration/yarn-debug.log*
+Vue/Concentration/yarn-error.log*
+Vue/Concentration/pnpm-debug.log*
+Vue/Concentration/lerna-debug.log*
+
+Vue/Concentration/node_modules
+Vue/Concentration/.DS_Store
+Vue/Concentration/dist
+Vue/Concentration/dist-ssr
+Vue/Concentration/coverage
+Vue/Concentration/*.local
+
+Vue/Concentration/cypress/videos/
+Vue/Concentration/cypress/screenshots/
+
+# Editor directories and files
+Vue/Concentration/.vscode/
+Vue/Concentration/!.vscode/extensions.json
+Vue/Concentration/.idea
+Vue/Concentration/*.suo
+Vue/Concentration/*.ntvs*
+Vue/Concentration/*.njsproj
+Vue/Concentration/*.sln
+Vue/Concentration/*.sw?
+
+Vue/Concentration/*.tsbuildinfo
