@@ -14,11 +14,28 @@ const cards = ref(cartesianProduct(suit,rank))
 
 
 function start() {
-  turns.value++
+  shuffle(cards.value)
 }
 
 function cartesianProduct(...a) {
   return a.reduce((a, b) => a.flatMap(d => b.map(e => [d, e].flat())))
+}
+
+// Fisher-Yates shuffle
+function shuffle(array) {
+  let currentIndex = array.length;
+
+  // While there remain elements to shuffle...
+  while (currentIndex != 0) {
+
+    // Pick a remaining element...
+    let randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
 }
 
 </script>
