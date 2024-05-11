@@ -7,8 +7,8 @@ const turns = ref(0)
 
 const time = ref(0)
 
-const suit = [1,2,3,4]
-const rank = [0,1,2,3,4,5,6,7,8,9,10,11,12,13]
+const suit = ["H","S","D","C"]
+const rank = ["Jo","A","2","3","4","5","6","7","8","9","10","J","Q","K"]
 
 const cards = ref(cartesianProduct(suit,rank))
 
