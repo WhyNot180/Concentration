@@ -21,6 +21,8 @@ const cards = ref(cartesianProduct(suit,rank))
 
 function start() {
   shuffle(cards.value)
+  turns.value = 0
+  time.value = 0
 }
 
 function cartesianProduct(...a) {
@@ -47,7 +49,34 @@ function shuffle(array) {
 </script>
 
 <template>
-  <h3>turns: {{ turns }}</h3>
-  <h2>{{ time }}</h2>
-  <button @click="start">Start</button>
+  <div class="mdc-layout-grid--fixed-column-width">
+    <div class="mdc-layout-grid__inner">
+      <div class="mdc-layout-grid__cell--span-4">
+        <span><h3 class="mdc-typography--headline3">turns: {{ turns }}</h3></span>
+      </div>
+      <div class="mdc-layout-grid__cell--span-4">
+        <span><h2 class="mdc-typography--headline2">{{ time }}</h2></span>
+      </div>
+      <div class="mdc-layout-grid__cell--span-4">
+        <span>
+          <button class="mdc-button mdc-button--raised" @click="start">
+            <span class="mdc-button__ripple"></span>
+            <span class="mdc-button__focus-ring"></span>
+            <span class="mdc-button__label">Start</span>
+          </button>
+        </span>
+      </div>
+      <div class="mdc-layout-grid__cell--span-12">
+        <span>
+          
+        </span>
+      </div>
+    </div>
+  </div>
 </template>
+
+<style lang="scss">
+  @use "@material/button/mdc-button";
+  @use "@material/layout-grid/mdc-layout-grid";
+  @use "@material/typography/mdc-typography";
+</style>
