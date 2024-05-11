@@ -1,11 +1,17 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 
 const msg = ref('Hello World!')
 
 const turns = ref(0)
 
 const time = ref(0)
+
+onMounted(() => {
+  setInterval(() => {
+    time.value++
+  }, 1000)
+})
 
 const suit = ["H","S","D","C"]
 const rank = ["Jo","A","2","3","4","5","6","7","8","9","10","J","Q","K"]
