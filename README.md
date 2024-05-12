@@ -46,3 +46,25 @@ Some things I loved about Vue was the large ecosystem, the power offered by the 
 Overall, I liked the power offered by Vue, but I prefer the functional syntax and simplicity of Elm.
 
 ## Goals
+
+Elm:
+- [x] Functional timer
+- [x] Functional turn counter
+- [x] Flippable cards
+    - [x] cards are pairable
+- [x] Functional start button
+    - [ ] Game starts *after* button press
+    - [x] Button scrambles cards
+- [ ] End condition
+- [x] Basic layout
+
+Vue:
+- [x] Functional timer
+- [ ] Functional turn counter
+- [ ] Flippable cards
+    - [ ] cards are pairable
+- [x] Functional start button
+    - [ ] Game starts *after* button press
+    - [x] Button scrambles cards
+- [ ] End condition
+- [ ] Basic layout (partial; see issues [#5](https://github.com/WhyNot180/Concentration/issues/5) and [#6](https://github.com/WhyNot180/Concentration/issues/6))
