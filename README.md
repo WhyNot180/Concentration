@@ -13,6 +13,14 @@ This project is a re-creation of the card game [concentration](https://en.wikipe
 
 ## Design
 
+The initial design is quite simplistic, only using a turn counter, timer, and start button, along with 54 cards:
+![](Images/Design.jpg)
+
+The current design is similar, with the main difference being the addition of two more cards (2 jokers) and the timer using only seconds:
+![](Images/Elm%20port.png)
+
+The project uses google's [material design](https://m3.material.io/), more specifically [material web components](https://github.com/material-components/material-components-web), which works for most web frameworks.
+
 ## Ports
 
 ### Elm
