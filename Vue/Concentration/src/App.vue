@@ -16,13 +16,17 @@ onMounted(() => {
 const suit = ["H","S","D","C"]
 const rank = ["Jo","A","2","3","4","5","6","7","8","9","10","J","Q","K"]
 
-const cards = ref(cartesianProduct(suit,rank))
+const cards = ref(cartesianProduct(rank,suit))
 
 
 function start() {
   shuffle(cards.value)
   turns.value = 0
   time.value = 0
+}
+
+function getImageURL(rank,suit) {
+  return '/../../Images/Cards/' + rank + suit + '.png'
 }
 
 function cartesianProduct(...a) {
@@ -52,7 +56,7 @@ function shuffle(array) {
   <div class="mdc-layout-grid--fixed-column-width">
     <div class="mdc-layout-grid__inner">
       <div class="mdc-layout-grid__cell--span-4">
-        <span><h3 class="mdc-typography--headline3">turns: {{ turns }}</h3></span>
+        <span><h3 class="mdc-typography--headline3">Turns: {{ turns }}</h3></span>
       </div>
       <div class="mdc-layout-grid__cell--span-4">
         <span><h2 class="mdc-typography--headline2">{{ time }}</h2></span>
@@ -66,9 +70,13 @@ function shuffle(array) {
           </button>
         </span>
       </div>
-      <div class="mdc-layout-grid__cell--span-12">
+      <div class="mdc-layout-grid__cell--span-12" style="columns:14;">
         <span>
-          
+          <ul class="mdc-image-list mdc-image-list--masonry my-masonry-image-list" v-for="card in cards">
+            <li class="mdc-image-list__item">
+              <img class="mdc-image-list__image" :src="getImageURL(card[0],card[1])" width="90%">
+            </li>
+          </ul>
         </span>
       </div>
     </div>
@@ -79,4 +87,9 @@ function shuffle(array) {
   @use "@material/button/mdc-button";
   @use "@material/layout-grid/mdc-layout-grid";
   @use "@material/typography/mdc-typography";
+  @use "@material/image-list";
+  
+  .my-masonry-image-list {
+    list-style-type:none;
+  }
 </style>
