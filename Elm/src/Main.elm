@@ -69,13 +69,13 @@ view model =
                                 )
                             <|
                                 if List.member ( x, y ) model.faceUpCards then
-                                    "../Images/Cards/"
+                                    "../Elm/Images/Cards/"
                                         ++ cardRankToImageName x
                                         ++ cardSuitToImageName y
                                         ++ ".png"
 
                                 else
-                                    "../Images/Cards/Back.png"
+                                    "../Elm/Images/Cards/Back.png"
                         )
                         model.cards
                     |> ImageList.imageList (ImageList.config |> ImageList.setAttributes [ style "columns" "14" ] |> ImageList.setMasonry True)
