@@ -3,6 +3,7 @@
 | Table of Contents |
 | ----------------- |
 | [About](#about) |
+| [Build](#build) |
 | [Design](#design) | 
 | [Ports](#ports) |
 | [Goals](#goals) |
@@ -10,6 +11,40 @@
 ## About
 
 This project is a re-creation of the card game [concentration](https://en.wikipedia.org/wiki/Concentration_(card_game)). The goal of the game is to match up each card with another that has the same rank. This is done by choosing two face-down cards and flipping them to see if they match, staying face-up if they do. This must be done in as few turns as possible.
+
+## Build
+
+Currently, this project is not ready for any release versions, so in order to use the web app it must be built manually.
+
+Before building anything you must install [Node.js](https://nodejs.org/en/download) 
+
+### Elm
+
+To build the Elm port, you must also download the [Elm Platform](https://guide.elm-lang.org/install/)
+
+Once this has been downloaded you can build by navigating to the "Elm" folder in a terminal (i.e. command prompt in windows) and running:
+
+```
+elm make src/Main.elm --output main.js
+```
+
+You can then run index.html on your browser
+
+### Vue
+
+To build the Vue port, you must navigate to the "Vue\Concentration" folder in a terminal (i.e. command prompt in windows) and run
+
+```
+npm install
+```
+
+followed by
+
+```
+npm run dev
+```
+
+opening a browser window running the project.
 
 ## Design
 
